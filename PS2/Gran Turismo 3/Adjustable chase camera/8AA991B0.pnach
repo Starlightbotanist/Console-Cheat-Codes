@@ -1,0 +1,148 @@
+gametitle=Gran Turismo 3 - A-Spec USA v1.10 [PBPX-95503] [8AA991B0]
+comment=Editable chase camera v1 - selectable values
+
+// ONLY for USA v1.10, PBPX-95503, CRC 8AA991B0.
+// These controls do not change field of view (FOV).
+//
+// HOW TO CHOOSE VALUES
+// Keep exactly ONE patch line active in EACH of the five sections below.
+// Put // at the start of the current active line, then remove // from the
+// line you want instead. The normal numbers on the right describe each choice.
+// Leave every line in the FIXED CODE section active and unchanged.
+//
+// Starting preset: height 2.5, pitch DOWN 12.5 degrees, distance 6,
+// horizontal spring 60, horizontal damping 16.
+// Motion pairs to try: stock 30/10, current preset 60/16, firmer 120/22.
+//
+// To use this file, copy it to your PCSX2 cheats folder as 8AA991B0.pnach in place of
+// the existing camera cheat, then restart GT3. Enable only one camera cheat.
+// Select chase view with R1 under GT3's default controls.
+// Height and distance are encoded as negative offsets; use the labels,
+// not the hexadecimal values, when choosing how high or far back to sit.
+
+// -------------------- HEIGHT --------------------
+// Game units above the car origin; higher raises the camera. Steps: 0.25.
+//patch=1,EE,0033E384,word,BF000000 // height 0.5
+//patch=1,EE,0033E384,word,BF400000 // height 0.75
+//patch=1,EE,0033E384,word,BF800000 // height 1
+//patch=1,EE,0033E384,word,BFA00000 // height 1.25
+//patch=1,EE,0033E384,word,BFC00000 // height 1.5
+//patch=1,EE,0033E384,word,BFE00000 // height 1.75
+//patch=1,EE,0033E384,word,C0000000 // height 2
+//patch=1,EE,0033E384,word,C0100000 // height 2.25
+patch=1,EE,0033E384,word,C0200000 // height 2.5 [DEFAULT]
+//patch=1,EE,0033E384,word,C0300000 // height 2.75
+//patch=1,EE,0033E384,word,C0400000 // height 3
+//patch=1,EE,0033E384,word,C0500000 // height 3.25
+//patch=1,EE,0033E384,word,C0600000 // height 3.5
+//patch=1,EE,0033E384,word,C0700000 // height 3.75
+//patch=1,EE,0033E384,word,C0800000 // height 4
+//patch=1,EE,0033E384,word,C0880000 // height 4.25
+//patch=1,EE,0033E384,word,C0900000 // height 4.5
+//patch=1,EE,0033E384,word,C0980000 // height 4.75
+//patch=1,EE,0033E384,word,C0A00000 // height 5
+
+// -------------------- PITCH --------------------
+// Degrees: positive looks DOWN, negative looks UP. Steps: 2.5 degrees.
+//patch=1,EE,000F0080,word,C1200000 // pitch UP 10 degrees
+//patch=1,EE,000F0080,word,C0F00000 // pitch UP 7.5 degrees
+//patch=1,EE,000F0080,word,C0A00000 // pitch UP 5 degrees
+//patch=1,EE,000F0080,word,C0200000 // pitch UP 2.5 degrees
+//patch=1,EE,000F0080,word,00000000 // pitch LEVEL (0 degrees)
+//patch=1,EE,000F0080,word,40200000 // pitch DOWN 2.5 degrees
+//patch=1,EE,000F0080,word,40A00000 // pitch DOWN 5 degrees
+//patch=1,EE,000F0080,word,40F00000 // pitch DOWN 7.5 degrees
+//patch=1,EE,000F0080,word,41200000 // pitch DOWN 10 degrees
+patch=1,EE,000F0080,word,41480000 // pitch DOWN 12.5 degrees [DEFAULT]
+//patch=1,EE,000F0080,word,41700000 // pitch DOWN 15 degrees
+//patch=1,EE,000F0080,word,418C0000 // pitch DOWN 17.5 degrees
+//patch=1,EE,000F0080,word,41A00000 // pitch DOWN 20 degrees
+
+// -------------------- DISTANCE --------------------
+// Game units behind the car origin; higher moves the camera farther back. Steps: 0.5.
+//patch=1,EE,0033E388,word,C0800000 // distance 4
+//patch=1,EE,0033E388,word,C0900000 // distance 4.5
+//patch=1,EE,0033E388,word,C0A00000 // distance 5
+//patch=1,EE,0033E388,word,C0B00000 // distance 5.5
+patch=1,EE,0033E388,word,C0C00000 // distance 6 [DEFAULT]
+//patch=1,EE,0033E388,word,C0D00000 // distance 6.5
+//patch=1,EE,0033E388,word,C0E00000 // distance 7
+//patch=1,EE,0033E388,word,C0F00000 // distance 7.5
+//patch=1,EE,0033E388,word,C1000000 // distance 8
+//patch=1,EE,0033E388,word,C1080000 // distance 8.5
+//patch=1,EE,0033E388,word,C1100000 // distance 9
+//patch=1,EE,0033E388,word,C1180000 // distance 9.5
+//patch=1,EE,0033E388,word,C1200000 // distance 10
+//patch=1,EE,0033E388,word,C1280000 // distance 10.5
+//patch=1,EE,0033E388,word,C1300000 // distance 11
+//patch=1,EE,0033E388,word,C1380000 // distance 11.5
+//patch=1,EE,0033E388,word,C1400000 // distance 12
+
+// -------------------- SPRING --------------------
+// Horizontal chase follow strength; higher catches up sooner. Stock: 30.
+//patch=1,EE,00352958,word,41200000 // spring 10
+//patch=1,EE,00352958,word,41700000 // spring 15
+//patch=1,EE,00352958,word,41A00000 // spring 20
+//patch=1,EE,00352958,word,41C80000 // spring 25
+//patch=1,EE,00352958,word,41F00000 // spring 30 (stock)
+//patch=1,EE,00352958,word,42200000 // spring 40
+//patch=1,EE,00352958,word,42480000 // spring 50
+patch=1,EE,00352958,word,42700000 // spring 60 [DEFAULT]
+//patch=1,EE,00352958,word,42960000 // spring 75
+//patch=1,EE,00352958,word,42B40000 // spring 90
+//patch=1,EE,00352958,word,42F00000 // spring 120
+//patch=1,EE,00352958,word,43160000 // spring 150
+//patch=1,EE,00352958,word,43480000 // spring 200
+//patch=1,EE,00352958,word,43960000 // spring 300
+//patch=1,EE,00352958,word,43FA0000 // spring 500
+
+// -------------------- DAMPING --------------------
+// Horizontal chase damping; higher reduces oscillation. Stock: 10.
+//patch=1,EE,00352960,word,40800000 // damping 4
+//patch=1,EE,00352960,word,40C00000 // damping 6
+//patch=1,EE,00352960,word,41000000 // damping 8
+//patch=1,EE,00352960,word,41200000 // damping 10 (stock)
+//patch=1,EE,00352960,word,41400000 // damping 12
+//patch=1,EE,00352960,word,41600000 // damping 14
+patch=1,EE,00352960,word,41800000 // damping 16 [DEFAULT]
+//patch=1,EE,00352960,word,41900000 // damping 18
+//patch=1,EE,00352960,word,41A00000 // damping 20
+//patch=1,EE,00352960,word,41B00000 // damping 22
+//patch=1,EE,00352960,word,41C00000 // damping 24
+//patch=1,EE,00352960,word,41E00000 // damping 28
+//patch=1,EE,00352960,word,42000000 // damping 32
+//patch=1,EE,00352960,word,42100000 // damping 36
+//patch=1,EE,00352960,word,42200000 // damping 40
+//patch=1,EE,00352960,word,42300000 // damping 44
+
+// -------------------- FIXED CODE --------------------
+// Below: fixed code. Leave these lines unchanged.
+// Select the editable chase slot even when the car has model-specific cameras.
+// The original model-specific bumper camera continues through its native path.
+patch=1,EE,00200138,word,1440000C
+patch=1,EE,0020013C,word,8E03006C
+patch=1,EE,00200140,word,00000000
+
+// Apply pitch before camera-local translation so it does not orbit the car.
+// This small helper uses the verified unused gap below this game's executable.
+// Camera mode 0 tail-calls the original translation without a pitch adjustment.
+patch=1,EE,000F0000,word,8E210100 // lw at,0x100(s1)
+patch=1,EE,000F0004,word,1020000F // beqz at,original_translation
+patch=1,EE,000F0008,word,00000000 // nop
+patch=1,EE,000F000C,word,27BDFFE0 // addiu sp,sp,-0x20
+patch=1,EE,000F0010,word,FFBF0000 // sd ra,0(sp)
+patch=1,EE,000F0014,word,E7AC0010 // swc1 f12,0x10(sp)
+patch=1,EE,000F0018,word,E7AD0014 // swc1 f13,0x14(sp)
+patch=1,EE,000F001C,word,E7AE0018 // swc1 f14,0x18(sp)
+patch=1,EE,000F0020,word,3C01000F // lui at,0x000F
+patch=1,EE,000F0024,word,0C095FD8 // jal 0x257F60
+patch=1,EE,000F0028,word,C42C0080 // lwc1 f12,0x80(at)
+patch=1,EE,000F002C,word,DFBF0000 // ld ra,0(sp)
+patch=1,EE,000F0030,word,C7AC0010 // lwc1 f12,0x10(sp)
+patch=1,EE,000F0034,word,C7AD0014 // lwc1 f13,0x14(sp)
+patch=1,EE,000F0038,word,C7AE0018 // lwc1 f14,0x18(sp)
+patch=1,EE,000F003C,word,27BD0020 // addiu sp,sp,0x20
+patch=1,EE,000F0040,word,00000000 // nop
+patch=1,EE,000F0044,word,08095FAD // j 0x257EB4
+patch=1,EE,000F0048,word,00000000 // nop
+patch=1,EE,00200184,word,0C03C000 // jal pitch helper
